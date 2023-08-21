@@ -1,0 +1,77 @@
+.conatiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.ant-form-item-control-input-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    max-width: 100%;
+}
+
+label{
+    font-size: 14px;
+    line-height: 1.5715;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    transition: all 0.3s;
+    text-align: left;
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    padding: 0 11px;
+    font-size: 14px;
+    line-height: 1.5715;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    padding: 0 11px;
+    font-size: 14px;
+    line-height: 1.5715;
+    background-color: #fff;
+    transition: all 0.3s;
+
+}
+
+#submit-button{ 
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    padding: 0 11px;
+    font-size: 14px;
+    line-height: 1.5715;
+    background-color: #fff;
+    transition: all 0.3s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#submit-button:hover{
+    background-color: #1890ff;
+    border-color: #1890ff;
+    color: #fff;
+    cursor: pointer;
+}
