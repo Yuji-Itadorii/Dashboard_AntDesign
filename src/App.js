@@ -1,25 +1,52 @@
+// App.js
+import React, { useState } from "react";
+import FormComponent from "./FormComponent";
+import TableComponent from "./TableComponent";
 import "./App.css";
-import Navbar from "./components/Navbar";
+import { Layout } from "antd";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home.jsx";
-import Users from "./components/Users.jsx";
-import { Provider } from "react-redux";
-import store from "./store";
 
-function App() {
+const { Content } = Layout;
+
+const App = () => {
+  const [data, setData] = useState([]);
+
+  const addRecord = (record) => {
+    setData([...data, { ...record, key: Math.random() }]);
+  };
+
+  const onDelete = (key) => {
+    setData(data.filter((record) => record.key !== key));
+  };
+
+  const onUpdate = (key, updatedRecord) => {
+    const updatedData = data.map((record) =>
+      record.key === key ? { ...updatedRecord, key } : record
+    );
+    setData(updatedData);
+  };
+
   return (
-    <Provider store={store}>
-      <div className="App">
-        <Navbar />
+    <Layout>
+      <Content style={{ padding: "24px" }}>
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/users" element={<Users />} />
+            <Route path="/" element={<FormComponent addRecord={addRecord} />} />
+            <Route
+              path="/table"
+              element={
+                <TableComponent
+                  data={data}
+                  onDelete={onDelete}
+                  onUpdate={onUpdate}
+                />
+              }
+            />
           </Routes>
         </Router>
-      </div>
-    </Provider>
+      </Content>
+    </Layout>
   );
-}
+};
 
 export default App;
